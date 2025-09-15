@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Fluency Practice</title>
+  <script type="module" crossorigin src="/math-royale/assets/index-Brff-2lH.js"></script>
+  <link rel="stylesheet" crossorigin href="/math-royale/assets/index-CFEWsV5M.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Math Fluency Practice</h1>
+      <p class="subtitle">Master multiplication and percentages</p>
+    </header>
+
+    <main class="game-area">
+      <!-- Sprint Mode Timer (hidden by default) -->
+      <section class="sprint-timer-section" id="sprintTimerSection" style="display: none;">
+        <div class="sprint-timer">
+          <span class="sprint-time" id="sprintTime">0:00</span>
+          <div class="sprint-progress">
+            <div class="sprint-progress-bar" id="sprintProgressBar"></div>
+          </div>
+        </div>
+        <div class="sprint-score">
+          <span class="sprint-score-label">Score:</span>
+          <span class="sprint-score-value" id="sprintScore">0</span>
+        </div>
+      </section>
+
+      <!-- Question Display -->
+      <section class="question-section">
+        <div class="question-display" id="questionDisplay">
+          <span class="question-text" id="questionText">Press Start to begin!</span>
+        </div>
+      </section>
+
+      <!-- Answer Input -->
+      <section class="answer-section">
+        <input
+          type="number"
+          class="answer-input"
+          id="answerInput"
+          placeholder="Your answer"
+          disabled
+          autocomplete="off"
+        >
+        <div class="feedback" id="feedback"></div>
+      </section>
+
+      <!-- Statistics Panel -->
+      <section class="stats-section">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-label">Questions</span>
+            <span class="stat-value" id="questionsCount">0</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Accuracy</span>
+            <span class="stat-value" id="accuracyRate">--%</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Avg Time</span>
+            <span class="stat-value" id="avgTime">--s</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Streak</span>
+            <span class="stat-value" id="currentStreak">0</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Controls -->
+      <section class="controls-section">
+        <button class="btn btn-primary" id="startBtn">Start Practice</button>
+        <button class="btn btn-secondary" id="resetBtn">Reset Session</button>
+        <button class="btn btn-sprint" id="sprintBtn">Sprint Mode</button>
+      </section>
+
+      <!-- Sprint Mode Selector (hidden by default) -->
+      <section class="sprint-selector" id="sprintSelector" style="display: none;">
+        <h3>Choose Sprint Duration:</h3>
+        <div class="sprint-duration-grid">
+          <button class="sprint-duration-btn" data-duration="1min">1 Minute</button>
+          <button class="sprint-duration-btn" data-duration="2min">2 Minutes</button>
+          <button class="sprint-duration-btn" data-duration="3min">3 Minutes</button>
+          <button class="sprint-duration-btn" data-duration="5min">5 Minutes</button>
+        </div>
+        <button class="btn btn-secondary" id="cancelSprintBtn">Cancel</button>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Tips: Use Enter to submit • Focus on accuracy first, then speed</p>
+    </footer>
+  </div>
+
+  <!-- Sprint Results Modal -->
+  <div class="modal" id="sprintResultsModal" style="display: none;">
+    <div class="modal-content">
+      <h2>Sprint Complete!</h2>
+      <div class="sprint-results">
+        <div class="result-stat">
+          <span class="result-label">Final Score:</span>
+          <span class="result-value" id="finalScore">0</span>
+        </div>
+        <div class="result-stat">
+          <span class="result-label">Questions Answered:</span>
+          <span class="result-value" id="finalQuestions">0</span>
+        </div>
+        <div class="result-stat">
+          <span class="result-label">Accuracy:</span>
+          <span class="result-value" id="finalAccuracy">0%</span>
+        </div>
+        <div class="result-stat">
+          <span class="result-label">Best Streak:</span>
+          <span class="result-value" id="finalStreak">0</span>
+        </div>
+      </div>
+
+      <div class="high-score-section" id="highScoreSection" style="display: none;">
+        <p class="high-score-message">🎉 New High Score!</p>
+        <input
+          type="text"
+          id="playerNameInput"
+          placeholder="Enter your name"
+          maxlength="20"
+          class="player-name-input"
+        >
+      </div>
+
+      <div class="leaderboard-section">
+        <h3>Leaderboard</h3>
+        <ol class="leaderboard-list" id="leaderboardList">
+          <!-- Populated dynamically -->
+        </ol>
+        <button class="btn btn-small btn-danger" id="clearScoresBtn" style="margin-top: 0.5rem;">Clear Scores</button>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-primary" id="playAgainBtn">Play Again</button>
+        <button class="btn btn-secondary" id="closeResultsBtn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load the main game app -->
+</body>
+</html>

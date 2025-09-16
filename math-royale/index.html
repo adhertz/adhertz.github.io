@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Math Royale</title>
-  <script type="module" crossorigin src="/math-royale/assets/index-BMaZ1pil.js"></script>
+  <script type="module" crossorigin src="/math-royale/assets/index-DvVmOynK.js"></script>
   <link rel="stylesheet" crossorigin href="/math-royale/assets/index-CFEWsV5M.css">
 </head>
 <body>
@@ -29,15 +29,24 @@
         </div>
       </section>
 
+      <!-- Mode Selector (shown when no game is active) -->
+      <section class="mode-selector" id="modeSelector" style="display: block;">
+        <h2 style="text-align: center; margin-bottom: 1.5rem;">Choose Your Mode</h2>
+        <div style="display: flex; gap: 1rem; justify-content: center;">
+          <button class="btn btn-primary" id="startPracticeBtn" style="padding: 1rem 2rem; font-size: 1.1rem;">Start Practice</button>
+          <button class="btn btn-sprint" id="startSprintBtn" style="padding: 1rem 2rem; font-size: 1.1rem;">Start Sprint</button>
+        </div>
+      </section>
+
       <!-- Question Display -->
-      <section class="question-section">
+      <section class="question-section" style="display: none;">
         <div class="question-display" id="questionDisplay">
           <span class="question-text" id="questionText">Press Start to begin!</span>
         </div>
       </section>
 
       <!-- Answer Input -->
-      <section class="answer-section">
+      <section class="answer-section" style="display: none;">
         <input
           type="number"
           class="answer-input"
@@ -50,7 +59,7 @@
       </section>
 
       <!-- Statistics Panel -->
-      <section class="stats-section">
+      <section class="stats-section" style="display: none;">
         <div class="stats-grid">
           <div class="stat-card">
             <span class="stat-label">Questions</span>
@@ -72,10 +81,8 @@
       </section>
 
       <!-- Controls -->
-      <section class="controls-section">
-        <button class="btn btn-primary" id="startBtn">Start Practice</button>
-        <button class="btn btn-secondary" id="resetBtn">Reset Session</button>
-        <button class="btn btn-sprint" id="sprintBtn">Sprint Mode</button>
+      <section class="controls-section" style="display: none;">
+        <button class="btn btn-secondary" id="resetBtn">Reset</button>
       </section>
 
       <!-- Sprint Mode Selector (hidden by default) -->
